@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		644D699B1B6527F200495793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D699A1B6527F200495793 /* AppDelegate.swift */; };
+		644D699D1B6527F200495793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D699C1B6527F200495793 /* ViewController.swift */; };
+		644D69A01B6527F200495793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644D699E1B6527F200495793 /* Main.storyboard */; };
+		644D69A21B6527F200495793 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644D69A11B6527F200495793 /* Images.xcassets */; };
+		644D69A51B6527F200495793 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644D69A31B6527F200495793 /* LaunchScreen.xib */; };
+		644D69B11B6527F300495793 /* NegaCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D69B01B6527F300495793 /* NegaCalcTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		644D69AB1B6527F300495793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 644D698D1B6527F200495793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 644D69941B6527F200495793;
+			remoteInfo = NegaCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		644D69951B6527F200495793 /* NegaCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NegaCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		644D69991B6527F200495793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		644D699A1B6527F200495793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		644D699C1B6527F200495793 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		644D699F1B6527F200495793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		644D69A11B6527F200495793 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		644D69A41B6527F200495793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		644D69AA1B6527F300495793 /* NegaCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NegaCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		644D69AF1B6527F300495793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		644D69B01B6527F300495793 /* NegaCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegaCalcTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		644D69921B6527F200495793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644D69A71B6527F300495793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		644D698C1B6527F200495793 = {
+			isa = PBXGroup;
+			children = (
+				644D69971B6527F200495793 /* NegaCalc */,
+				644D69AD1B6527F300495793 /* NegaCalcTests */,
+				644D69961B6527F200495793 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		644D69961B6527F200495793 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				644D69951B6527F200495793 /* NegaCalc.app */,
+				644D69AA1B6527F300495793 /* NegaCalcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		644D69971B6527F200495793 /* NegaCalc */ = {
+			isa = PBXGroup;
+			children = (
+				644D699A1B6527F200495793 /* AppDelegate.swift */,
+				644D699C1B6527F200495793 /* ViewController.swift */,
+				644D699E1B6527F200495793 /* Main.storyboard */,
+				644D69A11B6527F200495793 /* Images.xcassets */,
+				644D69A31B6527F200495793 /* LaunchScreen.xib */,
+				644D69981B6527F200495793 /* Supporting Files */,
+			);
+			path = NegaCalc;
+			sourceTree = "<group>";
+		};
+		644D69981B6527F200495793 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				644D69991B6527F200495793 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		644D69AD1B6527F300495793 /* NegaCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				644D69B01B6527F300495793 /* NegaCalcTests.swift */,
+				644D69AE1B6527F300495793 /* Supporting Files */,
+			);
+			path = NegaCalcTests;
+			sourceTree = "<group>";
+		};
+		644D69AE1B6527F300495793 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				644D69AF1B6527F300495793 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		644D69941B6527F200495793 /* NegaCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 644D69B41B6527F300495793 /* Build configuration list for PBXNativeTarget "NegaCalc" */;
+			buildPhases = (
+				644D69911B6527F200495793 /* Sources */,
+				644D69921B6527F200495793 /* Frameworks */,
+				644D69931B6527F200495793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NegaCalc;
+			productName = NegaCalc;
+			productReference = 644D69951B6527F200495793 /* NegaCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		644D69A91B6527F300495793 /* NegaCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 644D69B71B6527F300495793 /* Build configuration list for PBXNativeTarget "NegaCalcTests" */;
+			buildPhases = (
+				644D69A61B6527F300495793 /* Sources */,
+				644D69A71B6527F300495793 /* Frameworks */,
+				644D69A81B6527F300495793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				644D69AC1B6527F300495793 /* PBXTargetDependency */,
+			);
+			name = NegaCalcTests;
+			productName = NegaCalcTests;
+			productReference = 644D69AA1B6527F300495793 /* NegaCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		644D698D1B6527F200495793 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Skyleaf Design LLC";
+				TargetAttributes = {
+					644D69941B6527F200495793 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					644D69A91B6527F300495793 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 644D69941B6527F200495793;
+					};
+				};
+			};
+			buildConfigurationList = 644D69901B6527F200495793 /* Build configuration list for PBXProject "NegaCalc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 644D698C1B6527F200495793;
+			productRefGroup = 644D69961B6527F200495793 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				644D69941B6527F200495793 /* NegaCalc */,
+				644D69A91B6527F300495793 /* NegaCalcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		644D69931B6527F200495793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644D69A01B6527F200495793 /* Main.storyboard in Resources */,
+				644D69A51B6527F200495793 /* LaunchScreen.xib in Resources */,
+				644D69A21B6527F200495793 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644D69A81B6527F300495793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		644D69911B6527F200495793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644D699D1B6527F200495793 /* ViewController.swift in Sources */,
+				644D699B1B6527F200495793 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644D69A61B6527F300495793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644D69B11B6527F300495793 /* NegaCalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		644D69AC1B6527F300495793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 644D69941B6527F200495793 /* NegaCalc */;
+			targetProxy = 644D69AB1B6527F300495793 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		644D699E1B6527F200495793 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				644D699F1B6527F200495793 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		644D69A31B6527F200495793 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				644D69A41B6527F200495793 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		644D69B21B6527F300495793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		644D69B31B6527F300495793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		644D69B51B6527F300495793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NegaCalc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		644D69B61B6527F300495793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NegaCalc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		644D69B81B6527F300495793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NegaCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NegaCalc.app/NegaCalc";
+			};
+			name = Debug;
+		};
+		644D69B91B6527F300495793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NegaCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NegaCalc.app/NegaCalc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		644D69901B6527F200495793 /* Build configuration list for PBXProject "NegaCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644D69B21B6527F300495793 /* Debug */,
+				644D69B31B6527F300495793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		644D69B41B6527F300495793 /* Build configuration list for PBXNativeTarget "NegaCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644D69B51B6527F300495793 /* Debug */,
+				644D69B61B6527F300495793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		644D69B71B6527F300495793 /* Build configuration list for PBXNativeTarget "NegaCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644D69B81B6527F300495793 /* Debug */,
+				644D69B91B6527F300495793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 644D698D1B6527F200495793 /* Project object */;
+}
