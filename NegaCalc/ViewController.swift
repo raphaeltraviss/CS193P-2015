@@ -35,14 +35,14 @@ class ViewController: UIViewController {
             display.text = digit
             userIsInTheMiddleOfTypingANumber = true
         }
-        println("Digit = \(digit)")
+        print("Digit = \(digit)")
     }
     
 
     @IBAction func removeDigit() {
         if userIsInTheMiddleOfTypingANumber {
-            display.text = dropLast(display.text!)
-            if count(display.text!) == 0 {
+            display.text = String((display.text!).characters.dropLast())
+            if (display.text!).characters.count == 0 {
                 display.text = " "
                 userIsInTheMiddleOfTypingANumber = false
             }
@@ -64,16 +64,17 @@ class ViewController: UIViewController {
             }
         } else {
             operate(sender)
-            println(sender.currentTitle)
+            print(sender.currentTitle)
         }
     }
  
     @IBAction func setVariable() {
         if userIsInTheMiddleOfTypingANumber {
             brain.variableValues["M"] = displayValue;
-            println("\(brain.variableValues)")
+            print("\(brain.variableValues)")
             userIsInTheMiddleOfTypingANumber = false;
             displayValue = brain.evaluate()
+            register.text = "\(brain)"
         }
     }
     
@@ -101,7 +102,6 @@ class ViewController: UIViewController {
         } else {
             displayValue = nil
         }
-        
         register.text = "\(brain)"
     }
     

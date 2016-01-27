@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6401A17E1B97A6DC00C7AB14 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6401A17D1B97A6DC00C7AB14 /* AxesDrawer.swift */; };
 		644D699B1B6527F200495793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D699A1B6527F200495793 /* AppDelegate.swift */; };
 		644D699D1B6527F200495793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D699C1B6527F200495793 /* ViewController.swift */; };
 		644D69A01B6527F200495793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644D699E1B6527F200495793 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6401A17D1B97A6DC00C7AB14 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
 		644D69951B6527F200495793 /* NegaCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NegaCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		644D69991B6527F200495793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644D699A1B6527F200495793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		644D69981B6527F200495793 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6401A17D1B97A6DC00C7AB14 /* AxesDrawer.swift */,
 				644D69A11B6527F200495793 /* Images.xcassets */,
 				644D69A31B6527F200495793 /* LaunchScreen.xib */,
 				644D699A1B6527F200495793 /* AppDelegate.swift */,
@@ -159,7 +162,9 @@
 		644D698D1B6527F200495793 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Skyleaf Design LLC";
 				TargetAttributes = {
 					644D69941B6527F200495793 = {
@@ -216,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64CD7DDF1B67C0530004D156 /* CalculatorBrain.swift in Sources */,
+				6401A17E1B97A6DC00C7AB14 /* AxesDrawer.swift in Sources */,
 				644D699D1B6527F200495793 /* ViewController.swift in Sources */,
 				644D699B1B6527F200495793 /* AppDelegate.swift in Sources */,
 			);
@@ -280,6 +286,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -348,6 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NegaCalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.skyleafdesign.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -358,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NegaCalc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.skyleafdesign.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -376,6 +385,7 @@
 				);
 				INFOPLIST_FILE = NegaCalcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.skyleafdesign.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NegaCalc.app/NegaCalc";
 			};
@@ -391,6 +401,7 @@
 				);
 				INFOPLIST_FILE = NegaCalcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.skyleafdesign.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NegaCalc.app/NegaCalc";
 			};

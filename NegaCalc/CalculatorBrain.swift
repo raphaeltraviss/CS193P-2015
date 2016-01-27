@@ -8,8 +8,8 @@
 
 import Foundation
 
-class CalculatorBrain: Printable {
-    private enum Op: Printable {
+class CalculatorBrain: CustomStringConvertible {
+    private enum Op: CustomStringConvertible {
         case Operand(Double)
         case ValueOperation(String, Double?)
         case UnaryOperation(String, Double -> Double)
@@ -92,12 +92,12 @@ class CalculatorBrain: Printable {
             switch op {
             case .Operand(let operand):
                 return ("\(operand)", remainingOps, op.precedence)
-            case let .ValueOperation(symbol, value):
+            case let .ValueOperation(symbol, _):
                 return ("\(symbol)", remainingOps, op.precedence)
-            case let .UnaryOperation(symbol, operation):
+            case let .UnaryOperation(symbol, _):
                 let operandDescription = describe(remainingOps)
                 return ("\(symbol)(\(operandDescription.result))", remainingOps, op.precedence)
-            case let .BinaryOperation(symbol, isGrouped, operation):
+            case let .BinaryOperation(symbol, _, _):
                 // Group child descriptions in parenthesis if they are lower priority
                 // than the current operation.
                 let op1Description = describe(remainingOps)
@@ -166,7 +166,7 @@ class CalculatorBrain: Printable {
 
     func evaluate() -> Double? {
         let (result, remainder) = evaluate(opStack)
-        println("\(opStack) = \(result) with \(remainder) left over")
+        print("\(opStack) = \(result) with \(remainder) left over")
         return result
     }
     
