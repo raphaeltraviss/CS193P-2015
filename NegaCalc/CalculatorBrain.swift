@@ -96,7 +96,7 @@ class CalculatorBrain: CustomStringConvertible {
                 return ("\(symbol)", remainingOps, op.precedence)
             case let .UnaryOperation(symbol, _):
                 let operandDescription = describe(remainingOps)
-                return ("\(symbol)(\(operandDescription.result))", remainingOps, op.precedence)
+                return ("\(symbol)(\(operandDescription.result))", operandDescription.remainingOps, op.precedence)
             case let .BinaryOperation(symbol, _, _):
                 // Group child descriptions in parenthesis if they are lower priority
                 // than the current operation.
@@ -130,7 +130,7 @@ class CalculatorBrain: CustomStringConvertible {
         // Using a loop, since a computed property cannot be called rescursively.
         while !descriptionRemainder.isEmpty {
             (descriptionResult, descriptionRemainder, _) = describe(descriptionRemainder)
-            returnString = "\(returnString), \(descriptionResult)"
+            returnString = "\(descriptionResult), \(returnString)"
         }
         return returnString
     }

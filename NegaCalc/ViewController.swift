@@ -35,6 +35,7 @@ class ViewController: UIViewController {
             display.text = digit
             userIsInTheMiddleOfTypingANumber = true
         }
+        register.text = "\(brain)"
         print("Digit = \(digit)")
     }
     
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         if userIsInTheMiddleOfTypingANumber {
             display.text = String((display.text!).characters.dropLast())
             if (display.text!).characters.count == 0 {
-                display.text = " "
+                display.text = "0"
                 userIsInTheMiddleOfTypingANumber = false
             }
         }
@@ -51,8 +52,9 @@ class ViewController: UIViewController {
     
     @IBAction func clear() {
         brain.reset()
+        userIsInTheMiddleOfTypingANumber = false
         displayValue = nil
-        register.text = " "
+        register.text = "0"
     }
     
     @IBAction func changeSign(sender: UIButton) {
@@ -74,7 +76,7 @@ class ViewController: UIViewController {
             print("\(brain.variableValues)")
             userIsInTheMiddleOfTypingANumber = false;
             displayValue = brain.evaluate()
-            register.text = "\(brain)"
+            register.text = "\(brain) ="
         }
     }
     
@@ -86,7 +88,7 @@ class ViewController: UIViewController {
             if let number = newValue {
                 display.text = "\(number)"
             } else {
-                display.text = " "
+                display.text = "0"
             }
         }
     }
@@ -102,7 +104,7 @@ class ViewController: UIViewController {
         } else {
             displayValue = nil
         }
-        register.text = "\(brain)"
+        register.text = "\(brain) ="
     }
     
     
@@ -117,7 +119,7 @@ class ViewController: UIViewController {
                 displayValue = nil
             }
         }
-        register.text = "\(brain)"
+        register.text = "\(brain) ="
     }
 }
 
