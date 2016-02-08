@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>reewqrwe.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,21 @@
 			<true/>
 		</dict>
 		<key>644D69A91B6527F300495793</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>64D913691C67A9CD00A819D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>64D9137E1C67A9CD00A819D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>64D913891C67A9CD00A819D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

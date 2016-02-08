@@ -135,6 +135,13 @@ class CalculatorBrain: CustomStringConvertible {
         return returnString
     }
     
+    /**
+     Evaluates an opstack recursively, eventually reaching a single result, or erroring.
+     - Parameter ops: The opstack to evaluate.  This stack is a mix of operands and operations,
+     and they are evaluated in a recursive tree.
+     - Returns: A tuple that contains the result for this operation/operand evaluation,
+     and a stack of remaining operand/operations to continue evaluating.
+     */
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]) {
         if !ops.isEmpty {
             var remainingOps = ops

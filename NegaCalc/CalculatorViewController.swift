@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +80,9 @@ class ViewController: UIViewController {
         }
     }
     
+    /**
+     An internal numeric value derived from the numbers a user has typed into the keypad.
+    */
     var displayValue: Double? {
         get {
             return NSNumberFormatter().numberFromString(display.text!)?.doubleValue
