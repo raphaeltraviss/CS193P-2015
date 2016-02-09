@@ -9,15 +9,17 @@
 import UIKit
 
 protocol GraphViewDataSource {
-    func points(sender: GraphView, points: [CGPoint]) -> Void
+    func pointsToPlot(sender: GraphView) -> [CGPoint]
 }
 
 class GraphView: UIView {
     
     var dataSource: GraphViewDataSource?
     
-    var axesOrigin: CGPoint?
+    var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     
+    var axesOrigin: CGPoint?
+        
     // Pan gesture should move the origin, redraw the axes, and redraw
     // the graph, but only after the gesture ends.  WHile the gesture is
     // happening, we can make a copy of this view, and animate it within
@@ -25,6 +27,6 @@ class GraphView: UIView {
     
     override func drawRect(rect: CGRect) {
         let axes = AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: self.contentScaleFactor)
-        axes.drawAxesInRect(self.bounds, origin: self.center, pointsPerUnit: 50)
+        axes.drawAxesInRect(self.bounds, origin: self.center, pointsPerUnit: graphScale)
     }
 }
