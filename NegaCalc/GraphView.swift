@@ -18,15 +18,31 @@ class GraphView: UIView {
     
     var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     
-    var axesOrigin: CGPoint?
-        
-    // Pan gesture should move the origin, redraw the axes, and redraw
-    // the graph, but only after the gesture ends.  WHile the gesture is
-    // happening, we can make a copy of this view, and animate it within
-    // this view.
+    var axesOrigin: CGPoint! { didSet { setNeedsDisplay() } }
+    
+    var axes: AxesDrawer!
+    
+    func adjustScale(pinch: UIPinchGestureRecognizer) {
+        if pinch.state == .Changed {
+            graphScale *= pinch.scale
+            pinch.scale = 1
+        }
+    }
+    
+    func adjustOrigin(pan: UIPanGestureRecognizer) {
+        switch pan.state {
+        case .Ended: fallthrough
+        case .Changed:
+            let translation = pan.translationInView(self)
+            let newOrigin = CGPoint(x: translation.x + axesOrigin.x, y: translation.y + axesOrigin.y)
+            axesOrigin = newOrigin
+            pan.setTranslation(CGPointZero, inView: self)
+            print(translation)
+        default: break
+        }
+    }
     
     override func drawRect(rect: CGRect) {
-        let axes = AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: self.contentScaleFactor)
-        axes.drawAxesInRect(self.bounds, origin: self.center, pointsPerUnit: graphScale)
+        axes.drawAxesInRect(self.bounds, origin: axesOrigin, pointsPerUnit: graphScale)
     }
 }

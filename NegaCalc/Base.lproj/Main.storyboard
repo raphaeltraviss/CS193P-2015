@@ -429,7 +429,7 @@
                         <viewControllerLayoutGuide type="top" id="Xa4-Ij-7ae"/>
                         <viewControllerLayoutGuide type="bottom" id="U9q-uA-RJG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zJh-Ep-XmC" customClass="GraphView" customModule="NegaCalc" customModuleProvider="target">
+                    <view key="view" contentMode="redraw" id="zJh-Ep-XmC" customClass="GraphView" customModule="NegaCalc" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
