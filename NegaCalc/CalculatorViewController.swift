@@ -124,5 +124,14 @@ class CalculatorViewController: UIViewController {
         }
         register.text = "\(brain) ="
     }
+    
+    // Use prepareForSegue to load the program into the graphViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let graphViewController = segue.destinationViewController as? GraphViewController {
+                graphViewController.program = brain.program
+            }
+        }
+    }
 }
 
