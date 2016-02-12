@@ -14,17 +14,11 @@ class GraphViewController: UIViewController {
         didSet {
             let scaleGesture = UIPinchGestureRecognizer(target: graphView, action: "adjustScale:")
             let panGesture = UIPanGestureRecognizer(target: graphView, action: "adjustOrigin:")
+            let tapGesture = UITapGestureRecognizer(target: graphView, action: "moveOrigin:")
+            tapGesture.numberOfTapsRequired = 2
             graphView.addGestureRecognizer(scaleGesture)
             graphView.addGestureRecognizer(panGesture)
+            graphView.addGestureRecognizer(tapGesture)
         }
     }
-    
-    
-    
-    override func viewDidLoad() {
-        // By default, the axes orgin is the center of the view.
-        graphView.axesOrigin = graphView.center
-        graphView.axes = AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: graphView.contentScaleFactor)
-    }
-    
 }

@@ -12,11 +12,12 @@ protocol GraphViewDataSource {
     func pointsToPlot(sender: GraphView) -> [CGPoint]
 }
 
-class GraphView: UIView {
+
+@IBDesignable class GraphView: UIView {
     
     var dataSource: GraphViewDataSource?
     
-    var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
+    @IBInspectable var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     
     var axesOrigin: CGPoint! { didSet { setNeedsDisplay() } }
     
@@ -42,7 +43,26 @@ class GraphView: UIView {
         }
     }
     
+    func moveOrigin(tap: UITapGestureRecognizer) {
+        switch tap.state {
+        case .Ended: fallthrough
+        case .Changed:
+            let newOrigin = tap.locationInView(self)
+            axesOrigin = newOrigin
+        default: break
+        }
+    }
+    
     override func drawRect(rect: CGRect) {
+        // Initializing properties here, because I don't know how to work initializers.
+        if axesOrigin == nil {
+            axesOrigin = center
+        }
+        
+        if axes == nil {
+            axes = AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: contentScaleFactor)
+        }
+        
         axes.drawAxesInRect(self.bounds, origin: axesOrigin, pointsPerUnit: graphScale)
     }
 }
