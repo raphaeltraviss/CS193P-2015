@@ -19,6 +19,25 @@ protocol GraphViewDataSource {
     
     @IBInspectable var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     @IBInspectable var graphColor: UIColor = UIColor.redColor() { didSet { setNeedsDisplay() } }
+    @IBInspectable var samplePointsPerView: Int = 50
+    
+    // Returns an array of sample values along the x axis, based on the part of the axes
+    // we are currently viewing.
+    var sampleValues: [Double] {
+        let valueRange = bounds.width / graphScale
+        let valueOffset = (axesOrigin.x - center.x) / graphScale
+        
+        let startValue = -(Double(valueOffset + (valueRange / 2)))
+        //let maxValue = Double(valueOffset + (valueRange / 2))
+        let sampleIncrementValue = valueRange / CGFloat(samplePointsPerView)
+        
+        var values: [Double] = []
+        for increment in 0...samplePointsPerView {
+            values.append(startValue + Double(increment)*Double(sampleIncrementValue))
+        }
+        return values
+    }
+    
     
     var axesOrigin: CGPoint! { didSet { setNeedsDisplay() } }
     
@@ -53,6 +72,7 @@ protocol GraphViewDataSource {
         }
     }
     
+    // Converts point of double values to the actual view's cordinate system.
     private func convertAxesPoint(axesPoint: (x: Double, y: Double)) -> CGPoint {
         let coordinates = (x: CGFloat(axesPoint.x), y: CGFloat(axesPoint.y))
         let scaledCoordinates = (x:coordinates.x * graphScale, y: coordinates.y * graphScale)
@@ -64,7 +84,7 @@ protocol GraphViewDataSource {
     override func drawRect(rect: CGRect) {
         // Initializing properties here, because I don't know how to work initializers.
         if axesOrigin == nil {
-            axesOrigin = center
+            axesOrigin = convertPoint(center, fromCoordinateSpace: superview!)
         }
         if axes == nil {
             axes = AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: contentScaleFactor)
