@@ -24,24 +24,53 @@ protocol GraphViewDataSource {
     // Returns an array of sample values along the x axis, based on the part of the axes
     // we are currently viewing.
     var sampleValues: [Double] {
+        var values: [Double] = []
         let valueRange = bounds.width / graphScale
+        let axesOrigin = self.axesOrigin ?? center
+        
         let valueOffset = (axesOrigin.x - center.x) / graphScale
         
         let startValue = -(Double(valueOffset + (valueRange / 2)))
-        //let maxValue = Double(valueOffset + (valueRange / 2))
         let sampleIncrementValue = valueRange / CGFloat(samplePointsPerView)
-        
-        var values: [Double] = []
+            
         for increment in 0...samplePointsPerView {
             values.append(startValue + Double(increment)*Double(sampleIncrementValue))
         }
+ 
         return values
     }
     
+    var valueRange: (minPoint: CGPoint, maxPoint: CGPoint) {
+        let axesOrigin = self.axesOrigin ?? center
+        
+        let xRange = bounds.width / graphScale
+        let yRange = bounds.height / graphScale
+        let xOffset = (axesOrigin.x - center.x) / graphScale
+        let yOffset = (axesOrigin.y - center.y) / graphScale
+        
+        let minX = -Double(xOffset + (xRange / 2))
+        let minY = Double(yOffset - (yRange / 2))
+        
+        let maxX = -Double(xOffset - (xRange / 2))
+        
+        // Max Y is not reported correctly.  Perhaps it is counting the title overlap?
+        let maxY = Double(yOffset + (yRange / 2))
+        
+        return (CGPoint(x: minX, y: minY), CGPoint(x: maxX, y: maxY))
+    }
     
-    var axesOrigin: CGPoint! { didSet { setNeedsDisplay() } }
+    // The axes origin defaults to the center of the view.  This is an optional, simply
+    // because this view is initialized before its geometry is set.  Anywhere we use this,
+    // we need to unwrap it and set a default value at the center of the view.  I wish that
+    // I could do this right here.
+    var axesOrigin: CGPoint? { didSet { setNeedsDisplay() } }
     
-    var axes: AxesDrawer!
+    var axesOffset: CGPoint! {
+        let axesOrigin = self.axesOrigin ?? center
+        return CGPoint(x: axesOrigin.x - center.x, y: axesOrigin.y - center.y)
+    }
+    
+    private var axes: AxesDrawer!
     
     func adjustScale(pinch: UIPinchGestureRecognizer) {
         if pinch.state == .Changed {
@@ -55,8 +84,9 @@ protocol GraphViewDataSource {
         case .Ended: fallthrough
         case .Changed:
             let translation = pan.translationInView(self)
+            let axesOrigin = self.axesOrigin ?? CGPointZero
             let newOrigin = CGPoint(x: translation.x + axesOrigin.x, y: translation.y + axesOrigin.y)
-            axesOrigin = newOrigin
+            self.axesOrigin = newOrigin
             pan.setTranslation(CGPointZero, inView: self)
         default: break
         }
@@ -76,22 +106,19 @@ protocol GraphViewDataSource {
     private func convertAxesPoint(axesPoint: (x: Double, y: Double)) -> CGPoint {
         let coordinates = (x: CGFloat(axesPoint.x), y: CGFloat(axesPoint.y))
         let scaledCoordinates = (x:coordinates.x * graphScale, y: coordinates.y * graphScale)
+        let axesOrigin = self.axesOrigin ?? center
         let scaledAndTranslatedCoordinates = (x: scaledCoordinates.x + axesOrigin.x, y:-scaledCoordinates.y + axesOrigin.y)
         let graphPoint = CGPoint(x: scaledAndTranslatedCoordinates.x, y: scaledAndTranslatedCoordinates.y)
         return graphPoint
     }
     
     override func drawRect(rect: CGRect) {
-        // Initializing properties here, because I don't know how to work initializers.
-        if axesOrigin == nil {
-            axesOrigin = convertPoint(center, fromCoordinateSpace: superview!)
-        }
-        if axes == nil {
-            axes = AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: contentScaleFactor)
-        }
-        
+        // Initialize properties if they are not already set.
+        let axesOrigin = self.axesOrigin ?? center
+        let axes = self.axes ?? AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: contentScaleFactor)
+
         axes.drawAxesInRect(self.bounds, origin: axesOrigin, pointsPerUnit: graphScale)
-        
+
         // Graph the points from our data source.  We need at least two.
         if let points = dataSource?.pointsToGraph(self) {
             if let (head, tail) = points.decompose {

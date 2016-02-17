@@ -14,6 +14,8 @@ class GraphViewController: UIViewController, GraphViewDataSource {
     
     var brain: CalculatorBrain = CalculatorBrain()
     
+    var previousAxesOffset: CGPoint!
+    
     @IBOutlet var graphView: GraphView! {
         didSet {
             graphView.dataSource = self
@@ -29,6 +31,7 @@ class GraphViewController: UIViewController, GraphViewDataSource {
     
     func pointsToGraph(sender: GraphView) -> [(x: Double, y: Double)] {
         let sampleValues = graphView.sampleValues
+        print(graphView.valueRange)
         brain.program = program!
         
         var points: [(x: Double, y: Double)] = []
@@ -43,13 +46,13 @@ class GraphViewController: UIViewController, GraphViewDataSource {
         return points
     }
     
+    // When a user turns the device, move the origin to the same point relative to the center of both bounds.
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        // get the current axes origin's offset from the view's center.
-        // add the offset to the new CGSize's center
-        let centerOffset = (x: graphView.axesOrigin.x - graphView.center.x, y: graphView.axesOrigin.y - graphView.center.y)
-        let newOrigin = CGPoint(x: size.width - centerOffset.x, y: size.width - centerOffset.y)
-        print(graphView.axesOrigin)
-        graphView?.axesOrigin = newOrigin
-        print(newOrigin)
+        if let currentAxesOffset = graphView.axesOffset {
+            graphView.axesOrigin = CGPoint(
+                x: (size.width / 2) + currentAxesOffset.x,
+                y: (size.height / 2) + currentAxesOffset.y
+            )
+        }
     }
 }
