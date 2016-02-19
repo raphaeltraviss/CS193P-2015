@@ -26,9 +26,7 @@ protocol GraphViewDataSource {
     var sampleValues: [Double] {
         var values: [Double] = []
         let valueRange = bounds.width / graphScale
-        let axesOrigin = self.axesOrigin ?? center
-        
-        let valueOffset = (axesOrigin.x - center.x) / graphScale
+        let valueOffset = (axesOrigin.x - bounds.width / 2) / graphScale
         
         let startValue = -(Double(valueOffset + (valueRange / 2)))
         let sampleIncrementValue = valueRange / CGFloat(samplePointsPerView)
@@ -41,12 +39,10 @@ protocol GraphViewDataSource {
     }
     
     var valueRange: (minPoint: CGPoint, maxPoint: CGPoint) {
-        let axesOrigin = self.axesOrigin ?? center
-        
         let xRange = bounds.width / graphScale
         let yRange = bounds.height / graphScale
-        let xOffset = (axesOrigin.x - center.x) / graphScale
-        let yOffset = (axesOrigin.y - center.y) / graphScale
+        let xOffset = (axesOrigin.x - viewCenter.x) / graphScale
+        let yOffset = (axesOrigin.y - viewCenter.y) / graphScale
         
         let minX = -Double(xOffset + (xRange / 2))
         let minY = Double(yOffset - (yRange / 2))
@@ -63,11 +59,23 @@ protocol GraphViewDataSource {
     // because this view is initialized before its geometry is set.  Anywhere we use this,
     // we need to unwrap it and set a default value at the center of the view.  I wish that
     // I could do this right here.
-    var axesOrigin: CGPoint? { didSet { setNeedsDisplay() } }
+    var storedAxesOrigin: CGPoint? { didSet { setNeedsDisplay() } }
+    
+    var axesOrigin: CGPoint {
+        get {
+            return storedAxesOrigin ?? viewCenter
+        }
+        set {
+            storedAxesOrigin = newValue
+        }
+    }
+    
+    var viewCenter: CGPoint {
+        return CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+    }
     
     var axesOffset: CGPoint! {
-        let axesOrigin = self.axesOrigin ?? center
-        return CGPoint(x: axesOrigin.x - center.x, y: axesOrigin.y - center.y)
+        return CGPoint(x: axesOrigin.x - viewCenter.x, y: axesOrigin.y - viewCenter.y)
     }
     
     private var axes: AxesDrawer!
@@ -84,7 +92,6 @@ protocol GraphViewDataSource {
         case .Ended: fallthrough
         case .Changed:
             let translation = pan.translationInView(self)
-            let axesOrigin = self.axesOrigin ?? CGPointZero
             let newOrigin = CGPoint(x: translation.x + axesOrigin.x, y: translation.y + axesOrigin.y)
             self.axesOrigin = newOrigin
             pan.setTranslation(CGPointZero, inView: self)
@@ -106,7 +113,6 @@ protocol GraphViewDataSource {
     private func convertAxesPoint(axesPoint: (x: Double, y: Double)) -> CGPoint {
         let coordinates = (x: CGFloat(axesPoint.x), y: CGFloat(axesPoint.y))
         let scaledCoordinates = (x:coordinates.x * graphScale, y: coordinates.y * graphScale)
-        let axesOrigin = self.axesOrigin ?? center
         let scaledAndTranslatedCoordinates = (x: scaledCoordinates.x + axesOrigin.x, y:-scaledCoordinates.y + axesOrigin.y)
         let graphPoint = CGPoint(x: scaledAndTranslatedCoordinates.x, y: scaledAndTranslatedCoordinates.y)
         return graphPoint
@@ -114,7 +120,6 @@ protocol GraphViewDataSource {
     
     override func drawRect(rect: CGRect) {
         // Initialize properties if they are not already set.
-        let axesOrigin = self.axesOrigin ?? center
         let axes = self.axes ?? AxesDrawer(color: UIColor.blackColor(), contentScaleFactor: contentScaleFactor)
 
         axes.drawAxesInRect(self.bounds, origin: axesOrigin, pointsPerUnit: graphScale)

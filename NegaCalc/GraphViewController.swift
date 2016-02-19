@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GraphViewController: UIViewController, GraphViewDataSource {
+class GraphViewController: UIViewController, GraphViewDataSource, UIPopoverPresentationControllerDelegate {
     
     var program: AnyObject?
     
@@ -54,5 +54,23 @@ class GraphViewController: UIViewController, GraphViewDataSource {
                 y: (size.height / 2) + currentAxesOffset.y
             )
         }
+    }
+    
+    // Use prepareForSegue to load the program into the graphViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showStatistics" {
+            if let svc = segue.destinationViewController as? StatisticsViewController {
+                print(graphView.valueRange)
+                svc.valueRange = graphView.valueRange
+                if let svcPopup = svc.popoverPresentationController {
+                    svcPopup.delegate = self
+                    svc.preferredContentSize = CGSize(width: CGFloat(150), height: CGFloat(150))
+                }
+            }
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
     }
 }

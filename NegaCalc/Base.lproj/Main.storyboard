@@ -430,7 +430,7 @@
                         <viewControllerLayoutGuide type="bottom" id="U9q-uA-RJG"/>
                     </layoutGuides>
                     <view key="view" contentMode="redraw" id="zJh-Ep-XmC" customClass="GraphView" customModule="NegaCalc" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <userDefinedRuntimeAttributes>
@@ -442,7 +442,16 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="gZQ-9Q-3XD"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="gZQ-9Q-3XD">
+                        <barButtonItem key="rightBarButtonItem" title="Statistics" id="f6v-HV-6St">
+                            <connections>
+                                <segue destination="Hiy-0a-Ux7" kind="popoverPresentation" identifier="showStatistics" popoverAnchorBarButtonItem="f6v-HV-6St" id="TLY-YX-PpT">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="graphView" destination="zJh-Ep-XmC" id="uQY-E5-vep"/>
                     </connections>
@@ -450,6 +459,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJe-84-VDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="403" y="-86"/>
+        </scene>
+        <!--Statistics View Controller-->
+        <scene sceneID="WZY-jx-QqH">
+            <objects>
+                <viewController id="Hiy-0a-Ux7" customClass="StatisticsViewController" customModule="NegaCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G6Z-dL-MGo"/>
+                        <viewControllerLayoutGuide type="bottom" id="toq-jB-9WP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mIp-Wo-NSa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dMy-XW-1zf">
+                                <rect key="frame" x="274" y="258" width="53" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min X:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SK8-ac-hUT">
+                                        <rect key="frame" x="0.0" y="0.0" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Y:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WV-hO-NDq">
+                                        <rect key="frame" x="0.0" y="21" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max X:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl1-Xh-6mZ">
+                                        <rect key="frame" x="0.0" y="42" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Y:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTn-h3-a05">
+                                        <rect key="frame" x="0.0" y="63" width="53" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dMy-XW-1zf" firstAttribute="centerX" secondItem="mIp-Wo-NSa" secondAttribute="centerX" id="PiO-o4-7gr"/>
+                            <constraint firstItem="dMy-XW-1zf" firstAttribute="centerY" secondItem="mIp-Wo-NSa" secondAttribute="centerY" id="kTc-fe-Ick"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelMaxX" destination="Cl1-Xh-6mZ" id="Uj8-Tx-CtX"/>
+                        <outlet property="labelMaxY" destination="sTn-h3-a05" id="rc5-pF-mKx"/>
+                        <outlet property="labelMinX" destination="SK8-ac-hUT" id="g5B-Rv-Uhn"/>
+                        <outlet property="labelMinY" destination="4WV-hO-NDq" id="Pq6-Rw-AOo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UyS-st-vl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="-8"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="GVh-bE-nNE">

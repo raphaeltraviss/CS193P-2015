@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6401A17E1B97A6DC00C7AB14 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6401A17D1B97A6DC00C7AB14 /* AxesDrawer.swift */; };
+		640B85C71C776CD6005BB0E9 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640B85C61C776CD6005BB0E9 /* StatisticsViewController.swift */; };
 		644D699B1B6527F200495793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D699A1B6527F200495793 /* AppDelegate.swift */; };
 		644D699D1B6527F200495793 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D699C1B6527F200495793 /* CalculatorViewController.swift */; };
 		644D69A01B6527F200495793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644D699E1B6527F200495793 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		6401A17D1B97A6DC00C7AB14 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		640B85C61C776CD6005BB0E9 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		644D69951B6527F200495793 /* NegaCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NegaCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		644D69991B6527F200495793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644D699A1B6527F200495793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				644D699E1B6527F200495793 /* Main.storyboard */,
 				64D9139C1C682B6A00A819D0 /* GraphViewController.swift */,
 				64D9139E1C682D2700A819D0 /* GraphView.swift */,
+				640B85C61C776CD6005BB0E9 /* StatisticsViewController.swift */,
 				644D69981B6527F200495793 /* Supporting Files */,
 			);
 			path = NegaCalc;
@@ -232,6 +235,7 @@
 				64D9139D1C682B6A00A819D0 /* GraphViewController.swift in Sources */,
 				644D699B1B6527F200495793 /* AppDelegate.swift in Sources */,
 				64D9139F1C682D2700A819D0 /* GraphView.swift in Sources */,
+				640B85C71C776CD6005BB0E9 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
