@@ -525,7 +525,7 @@
                 <splitViewController id="Ija-MP-GEt" sceneMemberID="viewController">
                     <connections>
                         <segue destination="edB-mQ-wi4" kind="relationship" relationship="masterViewController" id="15F-VF-0la"/>
-                        <segue destination="9uh-vI-wj0" kind="showDetail" id="r3u-Vp-rMJ"/>
+                        <segue destination="9uh-vI-wj0" kind="showDetail" identifier="showDetail2" id="r3u-Vp-rMJ"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfg-0y-7Ob" userLabel="First Responder" sceneMemberID="firstResponder"/>

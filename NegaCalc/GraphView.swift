@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol GraphViewDataSource {
+protocol GraphViewDataSource: class {
     func pointsToGraph(sender: GraphView) -> [(x: Double, y: Double)]
 }
 
 
 @IBDesignable class GraphView: UIView {
     
-    var dataSource: GraphViewDataSource?
+    weak var dataSource: GraphViewDataSource?
     
     @IBInspectable var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     @IBInspectable var graphColor: UIColor = UIColor.redColor() { didSet { setNeedsDisplay() } }
@@ -48,8 +48,6 @@ protocol GraphViewDataSource {
         let minY = Double(yOffset - (yRange / 2))
         
         let maxX = -Double(xOffset - (xRange / 2))
-        
-        // Max Y is not reported correctly.  Perhaps it is counting the title overlap?
         let maxY = Double(yOffset + (yRange / 2))
         
         return (CGPoint(x: minX, y: minY), CGPoint(x: maxX, y: maxY))

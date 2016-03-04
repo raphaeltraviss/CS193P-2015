@@ -71,8 +71,6 @@ class CalculatorBrain: CustomStringConvertible {
         }
     }
     
-    
-    
     typealias PropertyList = AnyObject
     
     var program: PropertyList {
