@@ -56,9 +56,7 @@ protocol GraphViewDataSource {
     }
     
     // The axes origin defaults to the center of the view.  This is an optional, simply
-    // because this view is initialized before its geometry is set.  Anywhere we use this,
-    // we need to unwrap it and set a default value at the center of the view.  I wish that
-    // I could do this right here.
+    // because this view is initialized before its geometry is set.
     var storedAxesOrigin: CGPoint? { didSet { setNeedsDisplay() } }
     
     var axesOrigin: CGPoint {

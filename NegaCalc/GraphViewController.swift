@@ -14,8 +14,6 @@ class GraphViewController: UIViewController, GraphViewDataSource, UIPopoverPrese
     
     var brain: CalculatorBrain = CalculatorBrain()
     
-    var previousAxesOffset: CGPoint!
-    
     @IBOutlet var graphView: GraphView! {
         didSet {
             graphView.dataSource = self
@@ -29,22 +27,10 @@ class GraphViewController: UIViewController, GraphViewDataSource, UIPopoverPrese
         }
     }
     
-    func pointsToGraph(sender: GraphView) -> [(x: Double, y: Double)] {
-        let sampleValues = graphView.sampleValues
-        print(graphView.valueRange)
-        brain.program = program!
-        
-        var points: [(x: Double, y: Double)] = []
-        for value in sampleValues {
-            // Set the variable value, and then execute the program to see the result.
-            brain.variableValues["M"] = value
-            if let yValue = brain.evaluate() {
-                points.append((x: value, y: yValue))
-            }
-        }
-        
-        return points
-    }
+    // Save the origin and scale for the graphview between launchings.
+    typealias PropertyList = AnyObject
+    
+    
     
     // When a user turns the device, move the origin to the same point relative to the center of both bounds.
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -60,7 +46,6 @@ class GraphViewController: UIViewController, GraphViewDataSource, UIPopoverPrese
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showStatistics" {
             if let svc = segue.destinationViewController as? StatisticsViewController {
-                print(graphView.valueRange)
                 svc.valueRange = graphView.valueRange
                 if let svcPopup = svc.popoverPresentationController {
                     svcPopup.delegate = self
@@ -72,5 +57,28 @@ class GraphViewController: UIViewController, GraphViewDataSource, UIPopoverPrese
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.None
+    }
+    
+    
+    
+    // graphView datasource implementation.
+    
+    
+    
+    
+    func pointsToGraph(sender: GraphView) -> [(x: Double, y: Double)] {
+        let sampleValues = graphView.sampleValues
+        brain.program = program!
+        
+        var points: [(x: Double, y: Double)] = []
+        for value in sampleValues {
+            // Set the variable value, and then execute the program to see the result.
+            brain.variableValues["M"] = value
+            if let yValue = brain.evaluate() {
+                points.append((x: value, y: yValue))
+            }
+        }
+        
+        return points
     }
 }

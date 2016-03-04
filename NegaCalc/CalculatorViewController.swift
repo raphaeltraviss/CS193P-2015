@@ -9,11 +9,6 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.displayValue = nil
-    }
 
     @IBOutlet weak var display: UILabel!
     
@@ -22,6 +17,15 @@ class CalculatorViewController: UIViewController {
     var userIsInTheMiddleOfTypingANumber: Bool = false
     
     var brain = CalculatorBrain()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        register.text = "\(brain)"
+        if let evaluationResult = brain.evaluate() {
+            register.text! += " ="
+            displayValue = evaluationResult
+        }
+    }
     
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!

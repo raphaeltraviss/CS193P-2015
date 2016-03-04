@@ -47,6 +47,8 @@ class CalculatorBrain: CustomStringConvertible {
     
     private var knownOps = [String: Op]()
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     init() {
         func learnOp(op: Op) {
             knownOps[op.description] = op
@@ -62,7 +64,14 @@ class CalculatorBrain: CustomStringConvertible {
         learnOp(Op.UnaryOperation("sin", sin))
         learnOp(Op.UnaryOperation("cos", cos))
         learnOp(Op.VariableOperation("M"))
+        
+        // Restore state from prior launching, if it exists.
+        if let savedProgram = defaults.objectForKey("program") {
+            program = savedProgram
+        }
     }
+    
+    
     
     typealias PropertyList = AnyObject
     
@@ -83,6 +92,11 @@ class CalculatorBrain: CustomStringConvertible {
                 opStack = newOpStack
             }
         }
+    }
+    
+    func saveProgram() {
+        defaults.setObject(program, forKey: "program")
+        defaults.synchronize()
     }
     
     private func describe(ops: [Op]) -> (result: String, remainingOps: [Op], opPrecedence: Int) {
@@ -137,8 +151,10 @@ class CalculatorBrain: CustomStringConvertible {
     
     /**
      Evaluates an opstack recursively, eventually reaching a single result, or erroring.
+     
      - Parameter ops: The opstack to evaluate.  This stack is a mix of operands and operations,
      and they are evaluated in a recursive tree.
+     
      - Returns: A tuple that contains the result for this operation/operand evaluation,
      and a stack of remaining operand/operations to continue evaluating.
      */
@@ -179,17 +195,30 @@ class CalculatorBrain: CustomStringConvertible {
     func reset() {
         opStack.removeAll()
         variableValues.removeAll()
+        saveProgram()
     }
     
     func pushOperand(operand: Double) -> Double? {
+        // Push the new operand onto the op stack.
         opStack.append(Op.Operand(operand))
+        
+        // Save the new program state.
+        saveProgram()
+        
+        // Evaluate the new op stack.
         return evaluate()
     }
     
     func performOperation(symbol: String) -> Double? {
+        // If the symbol is valid, push it onto the op stack.
         if let operation = knownOps[symbol] {
             opStack.append(operation)
         }
+        
+        // Save the new program state.
+        saveProgram()
+        
+        // Evaluate the new op stack.
         return evaluate()
     }
 }
