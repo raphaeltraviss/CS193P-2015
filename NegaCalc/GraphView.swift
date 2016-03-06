@@ -12,10 +12,16 @@ protocol GraphViewDataSource: class {
     func pointsToGraph(sender: GraphView) -> [(x: Double, y: Double)]
 }
 
+protocol GraphViewMemory: class {
+    func rememberOrigin(origin: CGPoint)
+    func rememberScale(scale: CGFloat)
+}
+
 
 @IBDesignable class GraphView: UIView {
     
     weak var dataSource: GraphViewDataSource?
+    weak var memory: GraphViewMemory?
     
     @IBInspectable var graphScale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     @IBInspectable var graphColor: UIColor = UIColor.redColor() { didSet { setNeedsDisplay() } }
@@ -79,6 +85,7 @@ protocol GraphViewDataSource: class {
     func adjustScale(pinch: UIPinchGestureRecognizer) {
         if pinch.state == .Changed {
             graphScale *= pinch.scale
+            memory?.rememberScale(graphScale)
             pinch.scale = 1
         }
     }
@@ -91,6 +98,7 @@ protocol GraphViewDataSource: class {
             let newOrigin = CGPoint(x: translation.x + axesOrigin.x, y: translation.y + axesOrigin.y)
             self.axesOrigin = newOrigin
             pan.setTranslation(CGPointZero, inView: self)
+            memory?.rememberOrigin(newOrigin)
         default: break
         }
     }
@@ -101,6 +109,7 @@ protocol GraphViewDataSource: class {
         case .Changed:
             let newOrigin = tap.locationInView(self)
             axesOrigin = newOrigin
+            memory?.rememberOrigin(newOrigin)
         default: break
         }
     }
