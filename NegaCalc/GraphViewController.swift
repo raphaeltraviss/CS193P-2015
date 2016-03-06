@@ -28,9 +28,7 @@ class GraphViewController: UIViewController, GraphViewDataSource, GraphViewMemor
                 }
             }
             if let existingScale = defaults.valueForKey("scale") {
-                print("got a scale...")
                 if let scale = existingScale as? NSNumber {
-                    print("wowza!")
                     graphView.graphScale = CGFloat(scale)
                 }
             }
