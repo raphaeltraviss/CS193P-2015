@@ -1,11 +1,3 @@
-//
-//  GraphingViewController.swift
-//  NegaCalc
-//
-//  Created by Raphael on 2/7/16.
-//  Copyright © 2016 Skyleaf Design LLC. All rights reserved.
-//
-
 import UIKit
 
 class GraphViewController: UIViewController, GraphViewDataSource, GraphViewMemory, UIPopoverPresentationControllerDelegate {

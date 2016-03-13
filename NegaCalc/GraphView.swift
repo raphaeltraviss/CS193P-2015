@@ -1,11 +1,3 @@
-//
-//  GraphView.swift
-//  NegaCalc
-//
-//  Created by Raphael on 2/7/16.
-//  Copyright © 2016 Skyleaf Design LLC. All rights reserved.
-//
-
 import UIKit
 
 protocol GraphViewDataSource: class {
