@@ -1,4 +1,4 @@
-# NegaCalc: CS193P Graphic Calculator Solution
+# NegaCalc: CS193P Programming Project 1, 2 and 3 Graphing Calculator Solution
 This is my solution for the graphing calculator assignment in CS193P.
 
 ## What is included?
