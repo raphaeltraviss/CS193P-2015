@@ -1,5 +1,5 @@
-# NegaCalc
-This is my solution for the graphing calculator demo in CS193P.
+# NegaCalc: CS193P Graphic Calculator Solution
+This is my solution for the graphing calculator assignment in CS193P.
 
 ## What is included?
 
