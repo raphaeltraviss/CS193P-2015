@@ -74,7 +74,7 @@ protocol GraphViewMemory: class {
     
     private var axes: AxesDrawer!
     
-    func adjustScale(pinch: UIPinchGestureRecognizer) {
+    @objc func adjustScale(pinch: UIPinchGestureRecognizer) {
         if pinch.state == .Changed {
             graphScale *= pinch.scale
             memory?.rememberScale(graphScale)
@@ -82,7 +82,7 @@ protocol GraphViewMemory: class {
         }
     }
     
-    func adjustOrigin(pan: UIPanGestureRecognizer) {
+    @objc func adjustOrigin(pan: UIPanGestureRecognizer) {
         switch pan.state {
         case .Ended: fallthrough
         case .Changed:
@@ -95,7 +95,7 @@ protocol GraphViewMemory: class {
         }
     }
     
-    func moveOrigin(tap: UITapGestureRecognizer) {
+    @objc func moveOrigin(tap: UITapGestureRecognizer) {
         switch tap.state {
         case .Ended: fallthrough
         case .Changed:

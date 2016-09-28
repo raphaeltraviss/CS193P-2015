@@ -15,7 +15,7 @@ class GraphViewController: UIViewController, GraphViewDataSource, GraphViewMemor
             
             // Bring back defaults from persistent storage, if they exist.
             if let existingOrigin = defaults.valueForKey("origin") {
-                if let x = existingOrigin["x"] as? NSNumber, y = existingOrigin["y"] as? NSNumber {
+                if let x = existingOrigin["x"] as? NSNumber, let y = existingOrigin["y"] as? NSNumber {
                     graphView.axesOrigin = CGPoint(x: CGFloat(x), y: CGFloat(y))
                 }
             }
@@ -25,9 +25,9 @@ class GraphViewController: UIViewController, GraphViewDataSource, GraphViewMemor
                 }
             }
             
-            let scaleGesture = UIPinchGestureRecognizer(target: graphView, action: "adjustScale:")
-            let panGesture = UIPanGestureRecognizer(target: graphView, action: "adjustOrigin:")
-            let tapGesture = UITapGestureRecognizer(target: graphView, action: "moveOrigin:")
+            let scaleGesture = UIPinchGestureRecognizer(target: graphView, action: #selector(graphView.adjustScale))
+            let panGesture = UIPanGestureRecognizer(target: graphView, action: #selector(graphView.adjustOrigin))
+            let tapGesture = UITapGestureRecognizer(target: graphView, action: #selector(graphView.moveOrigin))
             tapGesture.numberOfTapsRequired = 2
             graphView.addGestureRecognizer(scaleGesture)
             graphView.addGestureRecognizer(panGesture)
