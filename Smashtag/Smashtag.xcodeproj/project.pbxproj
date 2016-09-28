@@ -27,7 +27,7 @@
 		64DA04901CA079D400B9B31A /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA048F1CA079D400B9B31A /* ImageTableViewCell.swift */; };
 		64F509B11CA2E4510007F1E8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F509B01CA2E4510007F1E8 /* WebViewController.swift */; };
 		64F509B31CA2E5A80007F1E8 /* LinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F509B21CA2E5A80007F1E8 /* LinkTableViewCell.swift */; };
-		64FCCB011D9B68E600F086D3 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FCCB001D9B68E600F086D3 /* Colours.swift */; };
+		64F5A92A1D9B6B21009B69BC /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F5A9291D9B6B21009B69BC /* Colours.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		64DA048F1CA079D400B9B31A /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		64F509B01CA2E4510007F1E8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		64F509B21CA2E5A80007F1E8 /* LinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTableViewCell.swift; sourceTree = "<group>"; };
-		64FCCB001D9B68E600F086D3 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = ../../../Colours/Colours.swift; sourceTree = "<group>"; };
+		64F5A9291D9B6B21009B69BC /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = ../Colours.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 		64CF10FE1C90CEB100DE391D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				64FCCB001D9B68E600F086D3 /* Colours.swift */,
+				64F5A9291D9B6B21009B69BC /* Colours.swift */,
 				64CF10D71C90CE5E00DE391D /* Assets.xcassets */,
 				64CF10DC1C90CE5E00DE391D /* Info.plist */,
 				64CF10D01C90CE5E00DE391D /* AppDelegate.swift */,
@@ -340,7 +340,7 @@
 				649AEE8A1CA1A09F0046D243 /* ImageScrollViewController.swift in Sources */,
 				64886F431CA9DC9600CEB0A3 /* HistoryTableViewController.swift in Sources */,
 				64CA8AE01CBD4EFE00DB5335 /* SearchHistory.swift in Sources */,
-				64FCCB011D9B68E600F086D3 /* Colours.swift in Sources */,
+				64F5A92A1D9B6B21009B69BC /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
