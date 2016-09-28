@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64131A121C984C44003A6BBD /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64131A111C984C44003A6BBD /* Colours.swift */; };
 		64672D2A1C985DA100A4047D /* TweetDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64672D291C985DA100A4047D /* TweetDetailTableViewController.swift */; };
 		64672D2C1C9861AB00A4047D /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64672D2B1C9861AB00A4047D /* KeywordTableViewCell.swift */; };
 		64886F431CA9DC9600CEB0A3 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64886F421CA9DC9600CEB0A3 /* HistoryTableViewController.swift */; };
@@ -28,6 +27,7 @@
 		64DA04901CA079D400B9B31A /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA048F1CA079D400B9B31A /* ImageTableViewCell.swift */; };
 		64F509B11CA2E4510007F1E8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F509B01CA2E4510007F1E8 /* WebViewController.swift */; };
 		64F509B31CA2E5A80007F1E8 /* LinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F509B21CA2E5A80007F1E8 /* LinkTableViewCell.swift */; };
+		64FCCB011D9B68E600F086D3 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FCCB001D9B68E600F086D3 /* Colours.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		64131A111C984C44003A6BBD /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		64672D291C985DA100A4047D /* TweetDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailTableViewController.swift; sourceTree = "<group>"; };
 		64672D2B1C9861AB00A4047D /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
 		64886F421CA9DC9600CEB0A3 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		64DA048F1CA079D400B9B31A /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		64F509B01CA2E4510007F1E8 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		64F509B21CA2E5A80007F1E8 /* LinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkTableViewCell.swift; sourceTree = "<group>"; };
+		64FCCB001D9B68E600F086D3 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colours.swift; path = ../../../Colours/Colours.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +160,7 @@
 		64CF10FE1C90CEB100DE391D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				64131A111C984C44003A6BBD /* Colours.swift */,
+				64FCCB001D9B68E600F086D3 /* Colours.swift */,
 				64CF10D71C90CE5E00DE391D /* Assets.xcassets */,
 				64CF10DC1C90CE5E00DE391D /* Info.plist */,
 				64CF10D01C90CE5E00DE391D /* AppDelegate.swift */,
@@ -254,18 +254,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Skyleaf Design";
 				TargetAttributes = {
 					64CF10CC1C90CE5E00DE391D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					64CF10E01C90CE5E00DE391D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 64CF10CC1C90CE5E00DE391D;
 					};
 					64CF10EB1C90CE5E00DE391D = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 64CF10CC1C90CE5E00DE391D;
 					};
 				};
@@ -330,7 +333,6 @@
 				64CF110B1C90D15500DE391D /* Tweet.swift in Sources */,
 				64C942F31C939F9A00654724 /* TweetTableViewCell.swift in Sources */,
 				64F509B31CA2E5A80007F1E8 /* LinkTableViewCell.swift in Sources */,
-				64131A121C984C44003A6BBD /* Colours.swift in Sources */,
 				64672D2C1C9861AB00A4047D /* KeywordTableViewCell.swift in Sources */,
 				64672D2A1C985DA100A4047D /* TweetDetailTableViewController.swift in Sources */,
 				64DA04901CA079D400B9B31A /* ImageTableViewCell.swift in Sources */,
@@ -338,6 +340,7 @@
 				649AEE8A1CA1A09F0046D243 /* ImageScrollViewController.swift in Sources */,
 				64886F431CA9DC9600CEB0A3 /* HistoryTableViewController.swift in Sources */,
 				64CA8AE01CBD4EFE00DB5335 /* SearchHistory.swift in Sources */,
+				64FCCB011D9B68E600F086D3 /* Colours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +408,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -450,8 +455,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -470,6 +477,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -483,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyleafdesign.Smashtag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -494,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyleafdesign.Smashtag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -505,6 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyleafdesign.SmashtagTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smashtag.app/Smashtag";
 			};
 			name = Debug;
@@ -517,6 +528,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyleafdesign.SmashtagTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smashtag.app/Smashtag";
 			};
 			name = Release;
@@ -528,6 +540,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyleafdesign.SmashtagUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Smashtag;
 				USES_XCTRUNNER = YES;
 			};
@@ -540,6 +553,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyleafdesign.SmashtagUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Smashtag;
 				USES_XCTRUNNER = YES;
 			};

@@ -139,8 +139,8 @@ private extension NSString {
                 return range
             }
             done = true
-            if start > 0 { start-- ; done = false }
-            if end < length { end++ ; done = false }
+            if start > 0 { start -= 1 ; done = false }
+            if end < length { end += 1 ; done = false }
         }
         return NSMakeRange(NSNotFound, 0)
     }
